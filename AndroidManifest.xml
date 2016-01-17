@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.imperio.inka.adultfemalesexlifestory"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <compatible-screens>
+        <screen android:screenDensity="mdpi" />
+        <screen android:screenDensity="hdpi" />
+        <screen android:screenDensity="xhdpi" />
+    </compatible-screens>
+
+    <!-- Since using API 8 for development, just in case -->
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+
+        <!-- StartApp Integration -->
+        <activity
+            android:name="com.startapp.android.publish.list3d.List3DActivity"
+            android:taskAffinity="com.imperio.inka.adultfemalesexlifestory.AppWall"
+            android:theme="@android:style/Theme" />
+        <activity
+            android:name="com.startapp.android.publish.AppWallActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:taskAffinity="com.imperio.inka.adultfemalesexlifestory.AppWall"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!-- StartApp integration Ends -->
+
+
+        <!-- Airpush integration starts -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.hrexpf.apbveb181514.APPID"
+            android:value="217961" />
+        <meta-data
+            android:name="com.hrexpf.apbveb181514.APIKEY"
+            android:value="android*1396090374181514294" />
+
+        <activity
+            android:name="com.hrexpf.apbveb181514.AdActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="com.hrexpf.apbveb181514.BrowserActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="com.hrexpf.apbveb181514.VActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
+
+        <service
+            android:name="com.hrexpf.apbveb181514.LService"
+            android:exported="false" >
+        </service>
+
+        <receiver
+            android:name="com.hrexpf.apbveb181514.BootReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.imperio.inka.adultfemalesexlifestory.Main"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.imperio.inka.adultfemalesexlifestory.CurlActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+</manifest>
